@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">chat-ionic-react-firebase</string>
+    <string name="title_activity_main">chat-ionic-react-firebase</string>
+    <string name="package_name">chat.ionic.react.firebase</string>
+    <string name="custom_url_scheme">chat.ionic.react.firebase</string>
+</resources>
