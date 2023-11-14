@@ -1,6 +1,7 @@
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import HandlerRoutes from './routes/HandlerRoutes';
 
+
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
 
@@ -16,6 +17,7 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 import '@ionic/react/css/flex-utils.css';
 import '@ionic/react/css/display.css';
+import { AuthProvider } from './contexts';
 
 /* Theme variables */
 //import './theme/variables.css';
@@ -25,7 +27,9 @@ setupIonicReact();
 export default function App(){
   return(
     <IonApp>
-      <HandlerRoutes/>
+      <AuthProvider>
+        <HandlerRoutes/>
+      </AuthProvider>
     </IonApp>
   )
 }

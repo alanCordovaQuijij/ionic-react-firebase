@@ -3,8 +3,11 @@ import './Login.scss'
 import { image } from '../../assets'
 import { initialValues, validationSchema } from './Login.form'
 import { useFormik } from 'formik'
+import { useAuth } from '../../hooks'
 
 export default function Login() {
+
+  const {setUsername} = useAuth();
 
   const formik = useFormik({
     initialValues: initialValues(),
@@ -12,7 +15,7 @@ export default function Login() {
     validateOnChange:false,
 
     onSubmit:(formValue) => {
-      console.log(formValue)
+      setUsername(formValue.username)
     }
   });
 
@@ -37,4 +40,4 @@ export default function Login() {
       <IonButton expand='block' onClick={() => formik.handleSubmit()}>Entrar</IonButton>
     </IonContent>
   )
-}
+} 
