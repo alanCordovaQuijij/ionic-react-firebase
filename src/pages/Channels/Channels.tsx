@@ -7,13 +7,14 @@ import { ChannelRealTime } from "../../api";
 
 import { useState, useEffect } from "react";
 import { ChannelModel } from "../../models";
+import { ListChannels } from "../../components";
 
 const channelRtController = new ChannelRealTime();
 
 export  function Channels() {
 
   const {username} = useAuth();
-  const [channels, setChannels] = useState<ChannelModel[]>([])
+  const [channels, setChannels] = useState<[ChannelModel] | [] |null>([])
   
   console.log("ULTRA DATA:",channels)
   useEffect(() => {
@@ -29,7 +30,7 @@ export  function Channels() {
 
       {channels ? (
         
-        <span> Lista de canales.....</span>
+        <ListChannels channels={channels}/>
          
       ): (
       <div className="channels-page__loading">

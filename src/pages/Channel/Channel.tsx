@@ -1,7 +1,18 @@
-import React from 'react'
+import './Channel.scss'
+import { BasicHeader } from '../../components'
+import { IonContent, IonSpinner } from '@ionic/react'
 
 export  function Channel() {
   return (
-    <h2>Channel</h2>
+    <>
+      <BasicHeader title='Chat' back/>
+
+      <IonContent className='channel-page ion-padding'>
+        <span>Listado de mensajes</span>
+        
+      </IonContent>
+    </>
+    
+    
   )
 }
