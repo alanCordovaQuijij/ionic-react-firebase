@@ -13,7 +13,7 @@ export  function ListChannels(props: ListChannelsTypes.Props) {
 
     <div className='list-channels'>
         {size(channels) === 0 ? (
-          <p className='list-channels_no-channels'>NO HAY CANALES</p>
+          <p className='list-channels_no-channels'>Cargando canales...</p>
         ): (
           map(channels, (channel) => (
             <Link to = {`/channel/${channel.id}`}key={channel.id} className='list-channels_block'>
